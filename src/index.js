@@ -4,11 +4,21 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <StrictMode>
     <ColorModeScript />
+    <Auth0Provider
+    domain={process.env.REACT_APP_AUTH_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
+    redirectUri={window.location.origin}
+    audience={'https://sharedoc-auth.com'}
+     scope={"read:user_data"}
+    >
     <App />
+    </Auth0Provider>
+    
   </StrictMode>,
   document.getElementById('root')
 );
