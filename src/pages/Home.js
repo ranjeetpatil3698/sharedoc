@@ -38,7 +38,7 @@ export default function Home() {
         </Box>
         <Box textAlign="center">
           
-          {user?user.name:""}
+          {/* {isAuthenticated?<Logout/>:<Login />} */}
          <Logout/>
           <Login />
           

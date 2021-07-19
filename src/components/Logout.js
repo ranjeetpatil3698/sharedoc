@@ -15,6 +15,7 @@ const Logout = () => {
       borderRadius="0.3rem"
       my="1rem"
       cursor="pointer"
+      textColor="white"
       onClick={() => logout({ returnTo: window.location.origin })}
     >
     Logout

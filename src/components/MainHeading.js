@@ -6,7 +6,7 @@ function MainHeading() {
         <Box fontSize="3rem" textAlign="center">
             ShareDoc:
             <Box>Easily Share Documents With Others</Box>
-            <Box>For FREE!!!</Box> 
+            <Box></Box> 
         </Box>
     )
 }

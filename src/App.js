@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
+import ViewFile from './pages/ViewFile';
 
 
 import Dashboard from './pages/Dashboard';
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" component={Home} exact={true}/>
+          <Route path="/viewfile/:id" component={ViewFile}/>
           <PrivateRoute path="/dashboard" component={Dashboard} />
             <Dashboard/>
           
