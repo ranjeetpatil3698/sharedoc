@@ -5,7 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import UploadFile from '../components/UploadFile';
 
 const Dashboard = () => {
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently,getIdTokenClaims } = useAuth0();
   const {user}=useAuth0();
 
   if(user){
@@ -14,19 +14,11 @@ const Dashboard = () => {
 
   useEffect(() => {
     const getfiles = async () => {
-      const token = await getAccessTokenSilently();
-      console.log(token);
+      const token = await getIdTokenClaims();
 
-      
-      const data = await axios.get(
-        `${process.env.REACT_APP_API_GATEWAY}/allfiles`,
-        
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          },
-        }
-      );
+      axios.defaults.headers.Authorization ='Bearer '+token.__raw;
+
+      const data = await axios.get(`${process.env.REACT_APP_API_GATEWAY}/allfiles`);
       console.log(data);
     };
     getfiles();
