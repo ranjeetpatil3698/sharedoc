@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
+import {useHistory} from "react-router-dom";
 
 
 import {
@@ -17,6 +18,7 @@ import {
 
 const UploadFile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const history=useHistory();
   const { getIdTokenClaims } = useAuth0();
 
   const [base64, setBase64] = useState(null);
@@ -24,6 +26,7 @@ const UploadFile = () => {
   
   let file;
   const handleFileChange = async e => {
+    
     file = e.target.files[0];
     setfilename(file.name)
     // console.log(file.name)
@@ -46,13 +49,14 @@ useEffect(()=>{
 const handleUpload=async()=>{
   console.log(filename)
     if(base64 && filename!=""){
-        console.log(base64);
+        // console.log(base64);
         const token = await getIdTokenClaims();
         axios.defaults.headers.Authorization ='Bearer '+token.__raw;
         
         const data = await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/sendfile/${filename}`,base64);
   
         console.log(data);
+        history.push("/dashboard")
         
     }
 }
