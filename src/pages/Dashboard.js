@@ -5,7 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import UploadFile from '../components/UploadFile';
 
 const Dashboard = () => {
-  const { getAccessTokenSilently,getIdTokenClaims } = useAuth0();
+  const { getIdTokenClaims } = useAuth0();
   const {user}=useAuth0();
 
   if(user){
