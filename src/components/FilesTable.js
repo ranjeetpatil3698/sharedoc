@@ -37,7 +37,7 @@ if(data.length===0){
   return (
     <>
       <Table variant="simple" m="2" border="2px grey">
-        <TableCaption placement="top">All Files Uploaded</TableCaption>
+        <TableCaption placement="top" m="1">All Files Uploaded</TableCaption>
         <Thead>
           <Tr>
             <Th>Filename</Th>

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 import {useHistory} from "react-router-dom";
+import {  AddIcon } from '@chakra-ui/icons'
 
 
 import {
@@ -63,7 +64,7 @@ const handleUpload=async()=>{
 
   return (
     <Box>
-      <Button onClick={onOpen} colorScheme="green">Upload File</Button>
+      <Button onClick={onOpen} colorScheme="green"><AddIcon mr="1px"/>Upload File</Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

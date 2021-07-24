@@ -6,7 +6,7 @@ const Logout = () => {
     const { logout } = useAuth0();
   return (
     <Box
-      fontSize="1.5rem"
+      fontSize="1rem"
       border="3px solid"
       borderColor="green.400"
       py="0.5rem"

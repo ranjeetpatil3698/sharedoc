@@ -1,11 +1,12 @@
 import React, { useEffect ,useState} from 'react';
 import axios from 'axios';
-import Logout from '../components/Logout';
 import { useAuth0 } from '@auth0/auth0-react';
+import Navbar from '../components/NavBar';
 import UploadFile from '../components/UploadFile';
 import FilesTable from '../components/FilesTable';
-
-
+import User from "../components/User"
+import { Box } from '@chakra-ui/react';
+//TODO:copt url remaining
 const Dashboard = () => {
   const { getIdTokenClaims } = useAuth0();
   const {user}=useAuth0();
@@ -31,12 +32,14 @@ const Dashboard = () => {
   // console.log(Files);
 
   return (
-    <div>
-      <Logout />
-      <UploadFile/>
-      Hello {user?user.nickname:""}
+    <Box height="100vh">
+      <Navbar/>
+      <User/>
+      <Box m="1">
       <FilesTable data={Files}/>
-    </div>
+      </Box>
+      
+    </Box>
   );
 };
 

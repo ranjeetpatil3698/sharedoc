@@ -10,22 +10,21 @@ import ViewFile from './pages/ViewFile';
 
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
-
+import AppWrapper from './components/AppWrapper';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
+      <AppWrapper>
       <Router>
         <Switch>
           <Route path="/" component={Home} exact={true}/>
           <Route path="/viewfile/:id" component={ViewFile}/>
           <PrivateRoute path="/dashboard" component={Dashboard} />
             <Dashboard/>
-          
-          
         </Switch>
       </Router>
-      
+      </AppWrapper>
     </ChakraProvider>
   );
 }
