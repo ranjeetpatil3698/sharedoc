@@ -10,7 +10,7 @@ const Visible = ({state,id}) => {
     const { getIdTokenClaims } = useAuth0();
 
     const handleChange=async  (e)=>{
-        console.log("switch checked",e.target)
+        // console.log("switch checked",e.target)
         const token = await getIdTokenClaims();
 
         axios.defaults.headers.Authorization ='Bearer '+token.__raw;

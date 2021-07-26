@@ -29,7 +29,7 @@ const ViewFile = () => {
     };
     getdata();
 
-    console.log(File);
+    // console.log(File);
   }, []);
 
   if (data && data.message.includes('no')) {

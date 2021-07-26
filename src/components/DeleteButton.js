@@ -13,7 +13,7 @@ const DeleteButton = ({id,filename}) => {
     const toast=useToast();
 
     const handleclick=async ()=>{
-        console.log("item deleted");
+        // console.log("item deleted");
         const token = await getIdTokenClaims();
 
         axios.defaults.headers.Authorization ='Bearer '+token.__raw;
@@ -22,7 +22,7 @@ const DeleteButton = ({id,filename}) => {
                 filename
             }
         );
-        console.log(data)
+        // console.log(data)
         toast({
             title: "File Deleted",
             description: "File Deleted Successfully Refreshing dashboard.",

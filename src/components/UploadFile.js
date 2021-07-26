@@ -49,7 +49,7 @@ useEffect(()=>{
 },[filename])
 
 const handleUpload=async()=>{
-  console.log(filename)
+  // console.log(filename)
     if(base64 && filename!=""){
         // console.log(base64);
         const token = await getIdTokenClaims();
@@ -57,7 +57,7 @@ const handleUpload=async()=>{
         
         const data = await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/sendfile/${filename}`,base64);
   
-        console.log(data);
+        // console.log(data);
         toast({
           title: "File uploaded.",
           description: "File upload successfull redirecting to dashboard.",
