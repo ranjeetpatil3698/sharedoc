@@ -81,10 +81,10 @@ export default function Home() {
                 </Text>
               </Box>
               <Text color={'green.500'}>
-              Created by <a href="https://www.linkedin.com/in/patilranjeet7699/" target="_blank">Ranjeet Patil</a>.
+              Created by <a href="https://www.linkedin.com/in/patilranjeet7699/" target="_blank" rel="noreferrer">Ranjeet Patil</a>.
             </Text>
             <Text color={'green.500'}>
-              Source code <a href="https://github.com/ranjeetpatil3698/sharedoc" target="_blank">Github Repo</a>.
+              Source code <a href="https://github.com/ranjeetpatil3698/sharedoc" target="_blank" rel="noreferrer">Github Repo</a>.
             </Text>
             </Stack>
           </Stack>
