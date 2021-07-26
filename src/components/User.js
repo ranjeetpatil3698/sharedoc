@@ -18,7 +18,7 @@ export default function Navbar() {
         </Box>
         <Spacer/>
         <Box>
-        <UploadFile/>
+        <UploadFile />
         </Box>
   </Flex>
   )

@@ -8,7 +8,8 @@ import {
   Th,
   Td,
   TableCaption,
-  Link
+  Link,
+  Box
 } from '@chakra-ui/react';
 import { Spinner } from "@chakra-ui/react"
 // import { Link as ReachLink } from "react-router-dom"
@@ -21,7 +22,7 @@ import DeleteButton from './DeleteButton';
 
 const FilesTable = ({data}) => {
     console.log(data)
-
+  const path=`${process.env.REACT_APP_URL}`
 if(data.length===0){
     return (
         <Spinner
@@ -35,8 +36,8 @@ if(data.length===0){
     )
 }
   return (
-    <>
-      <Table variant="simple" m="2" border="2px grey">
+    <Box m="2rem" >
+      <Table variant="simple" m="2" border="1.5px solid green" borderRadius="0.2rem" py="10px">
         <TableCaption placement="top" m="1">All Files Uploaded</TableCaption>
         <Thead>
           <Tr>
@@ -58,13 +59,13 @@ if(data.length===0){
                 <Td>{view}</Td>
                 <Td><Link as={ReachLink} to={`/viewfile/${id}`}><ExternalLinkIcon mx="2px" /></Link></Td>
                 <Td><Visible state={visible} id={id}/></Td>
-                <Td><ShareFile/></Td>
+                <Td><ShareFile path={`${path}/viewfile/${id}`}/></Td>
                 <Td><DeleteButton id={id} filename={filename}/></Td>
             </Tr>
             ))}
         </Tbody>
       </Table>
-    </>
+    </Box>
   );
 };
 

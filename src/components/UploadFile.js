@@ -14,7 +14,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,Box
+  Button,Box,useToast
 } from '@chakra-ui/react';
 
 const UploadFile = () => {
@@ -23,7 +23,8 @@ const UploadFile = () => {
   const { getIdTokenClaims } = useAuth0();
 
   const [base64, setBase64] = useState(null);
-  const [filename,setfilename]=useState("")
+  const [filename,setfilename]=useState("");
+  const toast=useToast();
   
   let file;
   const handleFileChange = async e => {
@@ -57,6 +58,13 @@ const handleUpload=async()=>{
         const data = await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/sendfile/${filename}`,base64);
   
         console.log(data);
+        toast({
+          title: "File uploaded.",
+          description: "File upload successfull redirecting to dashboard.",
+          status: "success",
+          duration: 1500,
+          isClosable: true,
+        })
         history.push("/dashboard")
         
     }

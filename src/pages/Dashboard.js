@@ -32,7 +32,7 @@ const Dashboard = () => {
   // console.log(Files);
 
   return (
-    <Box height="100vh">
+    <Box>
       <Navbar/>
       <User/>
       <Box m="1">

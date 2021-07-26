@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '@chakra-ui/react';
+import {Button,useToast} from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons'
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -10,7 +10,7 @@ import {useHistory} from "react-router-dom";
 const DeleteButton = ({id,filename}) => {
     const { getIdTokenClaims } = useAuth0();
     const history=useHistory();
-
+    const toast=useToast();
 
     const handleclick=async ()=>{
         console.log("item deleted");
@@ -23,6 +23,13 @@ const DeleteButton = ({id,filename}) => {
             }
         );
         console.log(data)
+        toast({
+            title: "File Deleted",
+            description: "File Deleted Successfully Refreshing dashboard.",
+            status: "error",
+            duration: 1200,
+            isClosable: true,
+          })
         history.push("/dashboard")
 
     }
