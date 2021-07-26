@@ -17,7 +17,7 @@ const DeleteButton = ({id,filename}) => {
         const token = await getIdTokenClaims();
 
         axios.defaults.headers.Authorization ='Bearer '+token.__raw;
-        const data = await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/deletefile/${id}`,
+        await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/deletefile/${id}`,
             {
                 filename
             }

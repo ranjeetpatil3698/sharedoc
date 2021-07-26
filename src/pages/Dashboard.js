@@ -2,7 +2,6 @@ import React, { useEffect ,useState} from 'react';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 import Navbar from '../components/NavBar';
-import UploadFile from '../components/UploadFile';
 import FilesTable from '../components/FilesTable';
 import User from "../components/User"
 import { Box } from '@chakra-ui/react';

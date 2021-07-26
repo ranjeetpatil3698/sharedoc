@@ -9,7 +9,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 export default function Navbar() {
     const {user}=useAuth0();
     if(user){
-        console.log(user)
+        // console.log(user)
     }
   return (
     <Flex border="2px solid green" my="1rem" textAlign="center" mx="10rem" p="2.5rem" borderRadius="0.2rem" >

@@ -3,7 +3,6 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
@@ -21,7 +20,7 @@ import DeleteButton from './DeleteButton';
 
 
 const FilesTable = ({data}) => {
-    console.log(data)
+    // console.log(data)
   const path=`${process.env.REACT_APP_URL}`
 if(data.length===0){
     return (

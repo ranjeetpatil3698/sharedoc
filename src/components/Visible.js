@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import { Switch } from "@chakra-ui/react";
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -6,7 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 const Visible = ({state,id}) => {
-    const [Check,setCheck]=useState(state);
+    const [Check]=useState(state);
     const { getIdTokenClaims } = useAuth0();
 
     const handleChange=async  (e)=>{
@@ -14,7 +14,7 @@ const Visible = ({state,id}) => {
         const token = await getIdTokenClaims();
 
         axios.defaults.headers.Authorization ='Bearer '+token.__raw;
-        const data = await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/updatefile/${id}`,
+        await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/updatefile/${id}`,
             {
                 type:"visible",
                 value:!Check

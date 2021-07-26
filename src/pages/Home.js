@@ -1,4 +1,4 @@
-import { Stack, Button, Head, Box,Container,Heading,Text,Icon,createIcon ,useColorModeValue} from "@chakra-ui/react";
+import { Stack, Button, Box,Container,Heading,Text,Icon,createIcon } from "@chakra-ui/react";
 import Loading from "../components/Loading"
 import { useAuth0 } from "@auth0/auth0-react";
 import {Redirect} from 'react-router-dom'
@@ -80,6 +80,12 @@ export default function Home() {
                   For Free
                 </Text>
               </Box>
+              <Text color={'green.500'}>
+              Created by <a href="https://www.linkedin.com/in/patilranjeet7699/" target="_blank">Ranjeet Patil</a>.
+            </Text>
+            <Text color={'green.500'}>
+              Source code <a href="https://github.com/ranjeetpatil3698/sharedoc" target="_blank">Github Repo</a>.
+            </Text>
             </Stack>
           </Stack>
         </Container>

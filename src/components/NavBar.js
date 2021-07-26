@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex,Spacer,Link } from "@chakra-ui/react";
+import { Box, Flex,Spacer } from "@chakra-ui/react";
 import Logo from "./Logo";
 import { useAuth0 } from '@auth0/auth0-react';
 import Login from "./Login";

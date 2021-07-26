@@ -1,12 +1,11 @@
 import React from "react"
-import { Box, Text } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 
 export default function Logo() {
   return (
     <Box >
       <Box 
       fontSize="1.5rem"
-      
       py="0.5rem"
       px="2rem"
       textColor="green.500"

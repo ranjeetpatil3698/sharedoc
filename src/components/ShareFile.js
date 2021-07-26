@@ -4,8 +4,7 @@ import { LinkIcon } from '@chakra-ui/icons'
 //Implement share file url to clipboard and fix backend  errors
 const ShareFile = ({path}) => {
     const toast = useToast()
-    const value="hello world";
-    const { hasCopied, onCopy } = useClipboard(path)
+    const {  onCopy } = useClipboard(path)
     return (
         <div>
             <Button colorScheme="green" variant="outline" onClick={()=>{

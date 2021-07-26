@@ -50,12 +50,12 @@ useEffect(()=>{
 
 const handleUpload=async()=>{
   // console.log(filename)
-    if(base64 && filename!=""){
+    if(base64 && filename!==""){
         // console.log(base64);
         const token = await getIdTokenClaims();
         axios.defaults.headers.Authorization ='Bearer '+token.__raw;
         
-        const data = await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/sendfile/${filename}`,base64);
+        await axios.patch(`${process.env.REACT_APP_API_GATEWAY}/sendfile/${filename}`,base64);
   
         // console.log(data);
         toast({

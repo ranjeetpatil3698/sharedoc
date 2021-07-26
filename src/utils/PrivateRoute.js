@@ -1,10 +1,10 @@
-import React ,{useEffect,useState}from 'react'
-import {Redirect,Route} from "react-router-dom";
+import React from 'react'
+import {Route} from "react-router-dom";
 import Loading from '../components/Loading';
-import { useAuth0,withAuthenticationRequired } from "@auth0/auth0-react";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const PrivateRoute =({ component, ...args }) =>{
-    const { user, isAuthenticated, isLoading } = useAuth0();
+   
     // console.log("from private route ",user)
     
     return (

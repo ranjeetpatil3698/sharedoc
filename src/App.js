@@ -3,7 +3,7 @@ import {
   ChakraProvider,
   theme,
 } from '@chakra-ui/react';
-import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import ViewFile from './pages/ViewFile';
 

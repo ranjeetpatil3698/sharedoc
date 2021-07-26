@@ -30,7 +30,7 @@ const ViewFile = () => {
     getdata();
 
     // console.log(File);
-  }, []);
+  }, [id]);
 
   if (data && data.message.includes('no')) {
     return (
