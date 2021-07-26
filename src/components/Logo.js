@@ -14,7 +14,7 @@ export default function Logo() {
       cursor="pointer"
       textColor="green.500"
       >
-        Formeasy
+        ShareDoc
       </Box>
     </Box>
   )
